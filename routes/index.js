@@ -13,7 +13,6 @@ indexRouter.get("/", (req, res) => {
 });
 
 indexRouter.post("/new", (req, res) => {
-  res.render("new");
   console.log("username to be saved: ", req.body.username)
 });
 
