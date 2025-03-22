@@ -9,7 +9,7 @@ indexRouter.use(express.urlencoded({ extended: true })); //parsing form data to 
 indexRouter.get("/", (req, res) => {
   console.log("usernames will be logged here - wip");
 
-  res.render("index",);
+  res.render("index");
 });
 
 indexRouter.post("/new", (req, res) => {

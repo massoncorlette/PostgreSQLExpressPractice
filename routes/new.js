@@ -2,7 +2,7 @@ const { Router } = require("express");
 
 const newUserRouter = Router();
 
-newUserRouter.get("/new", (req, res) => {
+newUserRouter.get("/", (req, res) => {
   res.render("userform");
 });
 
