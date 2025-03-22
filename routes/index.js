@@ -1,19 +1,16 @@
 const express = require("express");
-
 const { Router } = require("express");
+const { createUsernamePost, getUsernames, createUsernameGet } = require("../controllers/controller");
 
 const indexRouter = Router();
 
-indexRouter.use(express.urlencoded({ extended: true })); //parsing form data to req.body
+indexRouter.use(express.urlencoded({ extended: true })); // parsing form data into req.body
 
-indexRouter.get("/", (req, res) => {
-  console.log("usernames will be logged here - wip");
 
-  res.render("index");
-});
+indexRouter.get("/", getUsernames);
 
-indexRouter.post("/new", (req, res) => {
-  console.log("username to be saved: ", req.body.username)
-});
+indexRouter.get("/new", createUsernameGet);
+
+indexRouter.post("/new", createUsernamePost);
 
 module.exports = indexRouter;

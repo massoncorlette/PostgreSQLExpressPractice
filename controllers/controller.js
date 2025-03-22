@@ -8,11 +8,13 @@ async function getUsernames(req, res) {
 
 async function createUsernameGet(req, res) {
   // render the form
+  res.render("userform");
+
 }
 
 async function createUsernamePost(req, res) {
-  const { username } = req.body;
-  await db.insertUsername(username);
+  const { user } = req.body;
+  await db.insertUsername(user);
   res.redirect("/");
 }
 
