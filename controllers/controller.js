@@ -18,8 +18,16 @@ async function createUsernamePost(req, res) {
   res.redirect("/");
 }
 
+async function getUsersSearch(req, res) {
+  const searchParam = req.query.search;
+  console.log(searchParam);
+  const usernames = await db.searchForUsers(searchParam);
+  res.send("Found Usernames: " + usernames.map(user => user.username).join(", "));
+}
+
 module.exports = {
   getUsernames,
   createUsernameGet,
-  createUsernamePost
+  createUsernamePost,
+  getUsersSearch
 };
